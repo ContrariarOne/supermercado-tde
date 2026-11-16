@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supermercado - Administração</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>Supermercado</h1>
+    <nav>
+      <a href="/">Loja</a>
+      <a href="/admin">Administração</a>
+    </nav>
+
+    <div class="tema">
+      <button class="cor" data-cor="#7c3aed" style="background: #7c3aed" title="Roxo (padrão)"></button>
+      <button class="cor" data-cor="#eab308" style="background: #eab308" title="Amarelo"></button>
+      <button class="cor" data-cor="#0891b2" style="background: #0891b2" title="Ciano"></button>
+      <button class="cor" data-cor="#dc2626" style="background: #dc2626" title="Vermelho"></button>
+      <button id="botao-tema"></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="caixa">
+      <h2 id="titulo-formulario">Novo produto</h2>
+      <form id="formulario">
+        <input type="hidden" id="campo-id">
+        <input type="text" id="campo-nome" placeholder="Nome">
+        <input type="text" id="campo-categoria" placeholder="Categoria">
+        <input type="number" id="campo-preco" placeholder="Preço" step="0.01">
+        <input type="number" id="campo-estoque" placeholder="Estoque">
+        <button type="submit">Salvar</button>
+      </form>
+      <div id="mensagem" class="mensagem"></div>
+    </section>
+
+    <section class="caixa">
+      <h2>Produtos</h2>
+      <table>
+        <thead>
+          <tr><th>Nome</th><th>Categoria</th><th>Preço</th><th>Estoque</th><th>Ações</th></tr>
+        </thead>
+        <tbody id="tabela-produtos"></tbody>
+      </table>
+    </section>
+
+    <section class="caixa">
+      <div class="titulo-botao">
+        <h2>Vendas realizadas</h2>
+        <button id="botao-apagar-vendas" class="vermelho">Apagar histórico</button>
+      </div>
+      <table>
+        <thead>
+          <tr><th>Data</th><th>Subtotal</th><th>Desconto</th><th>Total</th></tr>
+        </thead>
+        <tbody id="tabela-vendas"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="/static/tema.js"></script>
+  <script src="/static/admin.js"></script>
+</body>
+</html>

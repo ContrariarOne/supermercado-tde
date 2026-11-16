@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supermercado - Loja</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>Supermercado</h1>
+    <nav>
+      <a href="/">Loja</a>
+      <a href="/admin">Administração</a>
+    </nav>
+
+    <div class="tema">
+      <button class="cor" data-cor="#7c3aed" style="background: #7c3aed" title="Roxo (padrão)"></button>
+      <button class="cor" data-cor="#eab308" style="background: #eab308" title="Amarelo"></button>
+      <button class="cor" data-cor="#0891b2" style="background: #0891b2" title="Ciano"></button>
+      <button class="cor" data-cor="#dc2626" style="background: #dc2626" title="Vermelho"></button>
+      <button id="botao-tema"></button>
+    </div>
+  </header>
+
+  <main class="loja">
+    <section class="caixa">
+      <h2>Produtos</h2>
+      <p>Digite a quantidade que deseja comprar de cada produto.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Categoria</th>
+            <th>Preço</th>
+            <th>Estoque</th>
+            <th>Quantidade</th>
+          </tr>
+        </thead>
+        <tbody id="lista-produtos"></tbody>
+      </table>
+    </section>
+
+    <section class="caixa resumo">
+      <h2>Sua compra</h2>
+      <p>Subtotal: <span id="subtotal">R$ 0,00</span></p>
+      <p>Desconto (5%): <span id="desconto">R$ 0,00</span></p>
+      <p class="total">Total: <span id="total">R$ 0,00</span></p>
+      <button id="botao-finalizar">Finalizar compra</button>
+      <div id="mensagem" class="mensagem"></div>
+    </section>
+  </main>
+
+  <script src="/static/tema.js"></script>
+  <script src="/static/loja.js"></script>
+</body>
+</html>
